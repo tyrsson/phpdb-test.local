@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Handler;
 
+use PhpDb\Adapter\AdapterInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
@@ -23,6 +24,6 @@ final class HomePageHandlerFactory
             : null;
         assert($template instanceof TemplateRendererInterface || null === $template);
 
-        return new HomePageHandler($container::class, $router, $template);
+        return new HomePageHandler($container->get('Adapter\ReadAdapter'), $template);
     }
 }

@@ -14,7 +14,7 @@ $cacheConfig = [
 
 $aggregator = new ConfigAggregator([
     \PhpDb\Adapter\Mysql\ConfigProvider::class,
-    \PhpDb\Container\ConfigProvider::class,
+    \PhpDb\ConfigProvider::class,
     \Laminas\ServiceManager\ConfigProvider::class,
     \Mezzio\Tooling\ConfigProvider::class,
     \Mezzio\Plates\ConfigProvider::class,
